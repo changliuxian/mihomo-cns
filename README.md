@@ -26,7 +26,7 @@
 - 平台：Linux ARM64（AArch64，ARMv8.0）
 - Go：1.27.1
 - 构建：`CGO_ENABLED=0`、`with_gvisor`、静态 ELF
-- SHA256：`<计算后的 SHA256 值>`
+- SHA256：`<sha256:4b033339a8d01b83b8514e82d3d9ffb250ac4fe02b54b25ffa6273546127628b>`
 
 ### CNS 节点写法
 
