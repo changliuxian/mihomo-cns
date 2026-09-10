@@ -22,9 +22,9 @@
 
 ### 成品
 
-- 文件：`mihomo-linux-arm64-v1.*.*-cns`
+- 文件：`mihomo-linux-arm64-v1.19.30`
 - 平台：Linux ARM64（AArch64，ARMv8.0）
-- Go：1.24.4
+- Go：1.27.1
 - 构建：`CGO_ENABLED=0`、`with_gvisor`、静态 ELF
 - SHA256：`<计算后的 SHA256 值>`
 
@@ -53,7 +53,7 @@
 2. 停止 OpenClash。
 3. 把本目录中的核心上传到 `/etc/openclash/core/clash_meta`。
 4. 执行 `chmod 0755 /etc/openclash/core/clash_meta`。
-5. 启动 OpenClash，在日志或命令行确认版本显示为 `v1.19.11-cns linux arm64`。
+5. 启动 OpenClash，在日志或命令行确认版本显示为 `v1.19.30-cns linux arm64`。
 
 OpenClash 的“更新 Meta 核心”会覆盖自定义核心；确认可用后不要自动更新核心。
 OpenClash 运行时可能使用 `/etc/openclash/clash` 链接，但持久核心位置仍应替换 `/etc/openclash/core/clash_meta`。
