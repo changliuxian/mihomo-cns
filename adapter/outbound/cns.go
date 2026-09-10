@@ -105,7 +105,7 @@ func (cns *Cns) ListenPacketWithDialer(ctx context.Context, cDialer C.Dialer, me
 	if err != nil {
 		return nil, err
 	}
-	return newPacketConn(TC.NewUDPPacketConn(conn, cns.option.Password), cns), nil
+	return NewPacketConn(TC.NewUDPPacketConn(conn, cns.option.Password), cns), nil
 }
 
 // SupportWithDialer implements C.ProxyAdapter.
@@ -257,7 +257,7 @@ func NewCns(option CnsOption) (*Cns, error) {
 			mpTcp:  option.MPTCP,
 			iface:  option.Interface,
 			rmark:  option.RoutingMark,
-			prefer: C.NewDNSPrefer(option.IPVersion),
+			prefer: option.IPVersion,
 		},
 		option: &option,
 	}, nil
