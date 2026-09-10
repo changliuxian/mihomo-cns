@@ -72,29 +72,6 @@ OpenClash 运行时可能使用 `/etc/openclash/clash` 链接，但持久核心�
 
 正式替换前建议先保留原核心，便于随时恢复。
 
-## 功能特性
-
-- 本地 HTTP/HTTPS/SOCKS 服务器，支持认证
-- 支持 VMess、VLESS、Shadowsocks、Trojan、Snell、TUIC、Hysteria 协议
-- 内置 DNS 服务器，旨在将 DNS 污染攻击的影响降到最低，支持 DoH/DoT 上游与 Fake IP
-- 基于域名、GEOIP、IPCIDR 或进程的规则，将数据包转发到不同节点
-- 远程代理组允许用户实现强大的规则，支持基于延迟的自动回退、负载均衡或自动选择节点
-- 远程 Provider，允许用户远程获取节点列表，而无需硬编码到配置中
-- Netfilter TCP 重定向。通过 `iptables` 将 Mihomo 部署在互联网网关上
-- 功能全面的 HTTP RESTful API 控制器
-
-## 面板
-
-已为该项目创建了一个提供一流支持的 Web 面板，可在 [metacubexd](https://github.com/MetaCubeX/metacubexd) 查看。
-
-## 配置示例
-
-配置示例位于 [/docs/config.yaml](https://github.com/MetaCubeX/mihomo/blob/Alpha/docs/config.yaml)。
-
-## 文档
-
-文档可在 [mihomo Docs](https://wiki.metacubex.one/) 中找到。
-
 ## 开发
 
 要求：
@@ -103,8 +80,8 @@ OpenClash 运行时可能使用 `/etc/openclash/clash` 链接，但持久核心�
 构建 mihomo：
 
 ```shell
-git clone https://github.com/MetaCubeX/mihomo.git
-cd mihomo && go mod download
+git clone https://github.com/changliuxian/mihomo-cns.git
+cd mihomo-cns && go mod download
 go build
 ```
 
@@ -132,6 +109,29 @@ iptables:
   enable: true # 默认为 false
   inbound-interface: eth0 # 检测入站接口，默认为 'lo'
 ```
+
+## 功能特性
+
+- 本地 HTTP/HTTPS/SOCKS 服务器，支持认证
+- 支持 VMess、VLESS、Shadowsocks、Trojan、Snell、TUIC、Hysteria 协议
+- 内置 DNS 服务器，旨在将 DNS 污染攻击的影响降到最低，支持 DoH/DoT 上游与 Fake IP
+- 基于域名、GEOIP、IPCIDR 或进程的规则，将数据包转发到不同节点
+- 远程代理组允许用户实现强大的规则，支持基于延迟的自动回退、负载均衡或自动选择节点
+- 远程 Provider，允许用户远程获取节点列表，而无需硬编码到配置中
+- Netfilter TCP 重定向。通过 `iptables` 将 Mihomo 部署在互联网网关上
+- 功能全面的 HTTP RESTful API 控制器
+
+## 面板
+
+已为该项目创建了一个提供一流支持的 Web 面板，可在 [metacubexd](https://github.com/MetaCubeX/metacubexd) 查看。
+
+## 配置示例
+
+配置示例位于 [/docs/config.yaml](https://github.com/MetaCubeX/mihomo/blob/Alpha/docs/config.yaml)。
+
+## 文档
+
+文档可在 [mihomo Docs](https://wiki.metacubex.one/) 中找到。
 
 ## 调试
 
