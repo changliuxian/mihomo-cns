@@ -54,6 +54,7 @@ const (
 	Tailscale
 	ZeroTier
 	GostRelay
+	Cns
 )
 
 const (
@@ -223,6 +224,8 @@ func (at AdapterType) String() string {
 		return "Mieru"
 	case AnyTLS:
 		return "AnyTLS"
+	case Cns:
+		return "Cns"
 	case Sudoku:
 		return "Sudoku"
 	case Masque:
