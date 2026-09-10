@@ -127,7 +127,7 @@ func (cns *Cns) wrapDialer(cDialer C.Dialer) (C.Dialer, error) {
 	if cns.option.DialerProxy == "" {
 		return cDialer, nil
 	}
-	return proxydialer.NewByName(cns.option.DialerProxy, cDialer)
+	return proxydialer.NewByName(cns.option.DialerProxy, cns.option.NewTunnel()), nil
 }
 
 func (cns *Cns) shakeHand(ctx context.Context, conn net.Conn, metadata *C.Metadata, udp bool) (_ net.Conn, err error) {
