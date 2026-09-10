@@ -82,11 +82,13 @@ OpenClash 运行时可能使用 `/etc/openclash/clash` 链接，但持久核心�
 ```shell
 git clone https://github.com/changliuxian/mihomo-cns.git
 cd mihomo-cns && go mod download
-去掉no_tailscale和no_zerotier标签
+
+去掉no_tailscale和no_zerotier构建：
 CGO_ENABLED=0 GOOS=linux GOARCH=arm64 \
   go build -tags "with_gvisor no_tailscale no_zerotier no_fake_tcp" \
   -trimpath -ldflags "-s -w -buildid=" -o bin/clash_meta
-默认构建：
+
+默认使用 gvisor tun 栈构建：
   CGO_ENABLED=0 GOOS=linux GOARCH=arm64 \
   go build -tags "with_gvisor" \
   -trimpath -ldflags "-s -w -buildid=" -o bin/clash_meta
@@ -98,11 +100,6 @@ CGO_ENABLED=0 GOOS=linux GOARCH=arm64 \
 go env -w GOPROXY=https://goproxy.io,direct
 ```
 
-使用 gvisor tun 栈构建：
-
-```shell
-go build -tags with_gvisor
-```
 
 ### IPTABLES 配置
 
