@@ -56,7 +56,7 @@ func ParseProxy(mapping map[string]any, options ...ProxyOption) (C.Proxy, error)
 		}
 		proxy, err = outbound.NewHttp(*httpOption)
 	case "cns":
-		cnsOption := &outbound.CnsOption{}
+		cnsOption := &outbound.CnsOption{BasicOption: basicOption}
 		err = decoder.Decode(mapping, cnsOption)
 		if err != nil {
 			break
