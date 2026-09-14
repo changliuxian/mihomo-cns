@@ -89,7 +89,7 @@ CGO_ENABLED=0 GOOS=linux GOARCH=arm64 \
   -trimpath -ldflags "-s -w -buildid=" -o bin/clash_meta
 
 默认使用 gvisor tun 栈构建：
-  CGO_ENABLED=0 GOOS=linux GOARCH=arm64 \
+CGO_ENABLED=0 GOOS=linux GOARCH=arm64 \
   go build -tags "with_gvisor" \
   -trimpath -ldflags "-s -w -buildid=" -o bin/clash_meta
 ```
